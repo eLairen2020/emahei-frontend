@@ -3,17 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css';
 import Nav from '../components/home/Nav';
-
-import Hero from '../components/home/hero_section';
-import Hero1 from '../components/home/hero';
 import Footer from '../components/home/Footer';
-import ViewCourses from '../components/home/Courses';
-import ViewBlogs from '../components/home/Blogs';
-
 import axios from 'axios';
 
 
-import Link from 'next/link';
 const Home = ({data}) => {
   console.log(data)
   // const [category, setCategory] = useState([])
@@ -21,11 +14,6 @@ const Home = ({data}) => {
  const header = {
     "Content-Type": "application/json",
   };
-
-// useEffect(() => {
-//   getCategory()
-// }, [])
-
 
 
 useEffect(() => {
@@ -56,17 +44,9 @@ const getCourses = () => {
       </Head>
 
       <Nav categories={data}/>
-      <Hero/>
       
-      <ViewCourses categories={data} Courses={Courses}/>
-      <ViewBlogs/>
       <Footer/>
-      {/* {category && category.map(item => (
-        <div key={category.id}>
-
-        <p>{item.name}</p>
-        </div>
-      ))} */}
+     
     </div>
     </>
   )
